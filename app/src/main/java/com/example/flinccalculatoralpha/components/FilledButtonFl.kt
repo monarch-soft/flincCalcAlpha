@@ -1,6 +1,7 @@
 package com.example.flinccalculatoralpha.components
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -18,7 +19,7 @@ fun FilledButtonFl(
 ){
     Column {
         Button(onClick = { onClick.invoke() }, modifier = modifier) {
-            Text(text = label, fontSize = 24.sp)
+            Text(text = label, fontSize = 18.sp, fontStyle = FontStyle.Normal, fontFamily = FontFamily.SansSerif)
         }
     }
 

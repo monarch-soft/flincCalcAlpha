@@ -5,8 +5,8 @@
     <string name="onboardingtext3">Onboarding text 3</string>
     <string name="lets_get_started">Let\'s Get Started</string>
     <string name="transfer_and_bond_cost_calculator"><![CDATA[Transfer & Bond Cost Calculator]]></string>
-    <string name="visit_our_website">Visiti our website</string>
-    <string name="property_purchase_price">Property Purchase Price\n</string>
+    <string name="visit_our_website">Visit our website</string>
+    <string name="property_purchase_price">Property Purchase Price</string>
     <string name="loan_amount">Loan Amount</string>
     <string name="calculate">Calculate\n</string>
     <string name="total_cost">Total Costs:</string>
