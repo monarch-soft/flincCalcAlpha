@@ -10,6 +10,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import com.example.flinccalculatoralpha.navigation.AppNavigation
 import com.example.flinccalculatoralpha.ui.theme.FlincCalculatorAlphaTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,7 +24,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    val navController = rememberNavController()
+                    AppNavigation(navController = navController)
                 }
             }
         }
@@ -37,10 +40,3 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     )
 }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    FlincCalculatorAlphaTheme {
-        Greeting("Android")
-    }
-}

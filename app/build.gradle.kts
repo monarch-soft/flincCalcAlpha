@@ -1,16 +1,18 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id ("com.google.dagger.hilt.android")
+    id("com.google.devtools.ksp")
 }
 
 android {
     namespace = "com.example.flinccalculatoralpha"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.flinccalculatoralpha"
-        minSdk = 33
-        targetSdk = 33
+        minSdk = 28
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -30,11 +32,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -51,6 +53,12 @@ android {
 
 dependencies {
 
+    val dagger = "2.47"
+    val hiltComposeNavigation = "1.0.0"
+    var navigation = "2.6.0"
+    var material3_version = "1.0.0-alpha01"
+
+
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
     implementation("androidx.activity:activity-compose:1.8.1")
@@ -66,4 +74,26 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    //dagger
+    implementation("com.google.dagger:hilt-android:$dagger")
+    ksp("com.google.dagger:hilt-compiler:$dagger")
+    implementation("androidx.hilt:hilt-navigation-compose:$hiltComposeNavigation")
+
+
+    //material 3
+    implementation("androidx.compose.material3:material3:$material3_version")
+    //compose navigation
+    implementation("androidx.navigation:navigation-compose:$navigation")
+    //icons
+    implementation("androidx.compose.material:material-icons-extended:1.4.0")
+    //coil image
+    implementation("io.coil-kt:coil-compose:2.4.0")
+
+    //accompainist and lotties file
+    val accompanist_version="0.24.2-alpha"
+    implementation ("com.google.accompanist:accompanist-pager:$accompanist_version")
+    implementation ("com.google.accompanist:accompanist-pager-indicators:$accompanist_version")
+
+    implementation ("com.airbnb.android:lottie-compose:5.2.0")
 }
