@@ -96,4 +96,5 @@ dependencies {
     implementation ("com.google.accompanist:accompanist-pager-indicators:$accompanist_version")
 
     implementation ("com.airbnb.android:lottie-compose:5.2.0")
+    implementation ("androidx.core:core-splashscreen:1.0.0")
 }

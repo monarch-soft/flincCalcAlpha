@@ -9,16 +9,13 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.example.flinccalculatoralpha.feature.CalculateScreen
 import com.example.flinccalculatoralpha.feature.HomeScreen
-import com.example.flinccalculatoralpha.feature.SplashScreen
+
 import com.example.flinccalculatoralpha.feature.SummaryScreen
 import com.example.flinccalculatoralpha.onboarding.OnboardingScreen
 
 @Composable
 fun AppNavigation(navController: NavHostController) {
-    NavHost(navController = navController, startDestination = Screens.splashScreen) {
-        composable(route = Screens.splashScreen) {
-            SplashScreen(navController = navController)
-        }
+    NavHost(navController = navController, startDestination = Screens.onboardingScreen) {
         composable(route = Screens.onboardingScreen) {
             OnboardingScreen(navController = navController)
         }

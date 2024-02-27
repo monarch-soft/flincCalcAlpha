@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonColors
@@ -17,6 +18,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -43,20 +45,25 @@ fun OnboardingScreen(
             OnBoardingPage.Third)
     var pageState = rememberPagerState();
     Column (modifier = Modifier.fillMaxSize()){
+        HorizontalPagerIndicator(
+            modifier = Modifier
+                .weight(1f)
+                .align(Alignment.CenterHorizontally)
+                .padding(16.dp),
+            pagerState = pageState,
+            activeColor = MaterialTheme.colorScheme.primary,
+            inactiveColor = MaterialTheme.colorScheme.onBackground,
+            indicatorHeight = 10.dp,
+            indicatorWidth = 60.dp,
+            spacing = 8.dp
+        )
         HorizontalPager(
-            modifier = Modifier.weight(10f),
+            modifier = Modifier.weight(1f),
             count = 3,
             state = pageState,
             verticalAlignment = Alignment.Top) {position ->
             PagerScreen(onBoardingPage = listPage[position])
-
         }
-        HorizontalPagerIndicator(
-            modifier = Modifier
-                .weight(1f)
-                .align(Alignment.CenterHorizontally),
-            pagerState = pageState
-        )
         letsGetStartedButton(
             modifier = Modifier.weight(1f),
             pagerState = pageState,

@@ -1,5 +1,6 @@
 package com.example.flinccalculatoralpha.feature
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -13,6 +14,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -36,6 +38,7 @@ fun SummaryScreen(navController: NavController) {
 
     Scaffold(
         topBar = { TopAppBarFl(title = stringResource(id = R.string.transfer_and_bond_cost_calculator), navController = navController ) },
+        modifier = Modifier.background(MaterialTheme.colorScheme.background)
     ) {
         Column(modifier = Modifier.padding(paddingValues = it)) {
             Column(

@@ -7,8 +7,11 @@ import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBarColors
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -29,9 +32,14 @@ fun TopAppBarFl(title:String,navController: NavController){
             },
             navigationIcon = {
                 IconButton(onClick = { navController.popBackStack() }) {
-                    Icon(Icons.Filled.ArrowBack, contentDescription = "Go back")
+                    Icon(Icons.Filled.ArrowBack, contentDescription = "Go back",tint = MaterialTheme.colorScheme.onBackground)
                 }
-            }
+            },
+            colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+                containerColor = MaterialTheme.colorScheme.background,
+                titleContentColor = MaterialTheme.colorScheme.onBackground,
+            )
+
         )
     }
 }
@@ -42,10 +50,14 @@ fun TopAppBarTopIcoFl(navController: NavController){
         CenterAlignedTopAppBar(
             title = {},
             navigationIcon = {
-                IconButton(onClick = { navController.popBackStack() }) {
-                    Icon(Icons.Filled.ArrowBack, contentDescription = "Go back")
+                IconButton(onClick = { navController.popBackStack() },) {
+                    Icon(Icons.Filled.ArrowBack, contentDescription = "Go back", tint = MaterialTheme.colorScheme.onBackground)
                 }
-            }
+            },
+            colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+                containerColor = MaterialTheme.colorScheme.background,
+                titleContentColor = MaterialTheme.colorScheme.onBackground,
+            )
         )
     }
 }
